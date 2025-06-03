@@ -7,7 +7,7 @@ from helper_functions import setup_logging, get_env_variable
 def main():
     # Setup environment
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    ARTIFACTS_DIR = get_env_variable('ARTIFACTS_DIR', os.path.join(BASE_DIR,'mlops' 'artifacts'))
+    ARTIFACTS_DIR = get_env_variable('ARTIFACTS_DIR', os.path.join(BASE_DIR,'mlops','artifacts'))
     os.makedirs(ARTIFACTS_DIR, exist_ok=True)
     setup_logging()
     
