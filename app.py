@@ -1,3 +1,6 @@
+import tensorflow as tf
+print("TensorFlow version:", tf.__version__)
+
 import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
