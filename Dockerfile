@@ -14,5 +14,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Expose Streamlit port
 EXPOSE 8501
 
+ENV TF_CPP_MIN_LOG_LEVEL=2
+ENV CUDA_VISIBLE_DEVICES=""
+
+
 # Run Streamlit app
 CMD ["streamlit", "run", "app.py", "--server.port", "8501", "--server.headless", "true"]
