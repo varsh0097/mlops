@@ -12,12 +12,13 @@ import os
 ARTIFACTS_DIR = "/app/artifacts"
 MODEL_PATH = os.path.join(ARTIFACTS_DIR, "model.lungcancercode.h5")
 CLASS_INDICES_PATH = os.path.join(ARTIFACTS_DIR, "class_indices.pkl")
-model = load_model(MODEL_PATH)
 
-
-
-# Load model
-model = load_model(MODEL_PATH)
+# Load model with compile=False to avoid batch_shape error
+try:
+    model = load_model(MODEL_PATH, compile=False)
+except Exception as e:
+    st.error(f"Failed to load model: {e}")
+    st.stop()
 
 # Load class indices
 with open(CLASS_INDICES_PATH, "rb") as f:
