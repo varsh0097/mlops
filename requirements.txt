@@ -1,11 +1,14 @@
+protobuf==3.19.6                    # Required for TensorFlow & Streamlit compatibility
+typing-extensions>=4.6.0,<4.7.0     # Prevents pydantic & streamlit conflicts
 
-protobuf==3.19.6
-typing-extensions>=4.6.0,<4.7.0
-pandas
-numpy
-scikit-learn
-tensorflow-cpu==2.11.0
-fastapi
-uvicorn
-matplotlib
-streamlit
+pandas==1.5.3                       # Compatible with Python 3.8
+numpy==1.24.4                       # Last numpy version supporting Python 3.8
+scikit-learn==1.2.2                # Compatible with numpy 1.24 and Python 3.8
+
+tensorflow-cpu==2.11.0             # Already correct
+streamlit==1.24.0                  # Known stable with protobuf 3.19.6 and Python 3.8
+
+fastapi==0.95.2                    # Compatible with Python 3.8 and older typing-extensions
+uvicorn==0.21.1                    # Compatible with fastapi 0.95.x
+
+matplotlib==3.7.1                  # Last matplotlib version supporting Python 3.8
